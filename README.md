@@ -2,27 +2,29 @@
   <img src="icon-128.png" width="96" height="96" alt="Gemini Prompt Navigator Logo" style="border-radius: 20%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
 </p>
 
-<h1 align="center">Gemini Prompt Navigator</h1>
+<h1 align="center">Gemini & Google Search AI Prompt Navigator</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Manifest-V3-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Manifest V3" />
   <img src="https://img.shields.io/badge/Google-Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/Google-Search%20AI%20Mode-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Search AI" />
   <img src="https://img.shields.io/badge/Built%20With-Vanilla%20JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Vanilla JS" />
 </p>
 
 <p align="center">
-  <b>A premium, lightweight browser extension that injects a smart, draggable, and searchable Table of Contents sidebar directly into Google Gemini sessions.</b>
+  <b>A premium, lightweight browser extension that injects a smart, draggable, and searchable Table of Contents sidebar directly into Google Gemini sessions and Google Search AI Mode chat pages.</b>
 </p>
 
 <p align="center">
-  <img src="screenshot-expanded-v2.png" width="49%" alt="Prompt Navigator" />
-  <img src="screenshot-collapsed.png" width="49%" alt="Prompt Navigator Collapsed" />
+  <img src="screenshot-google-ai-mode.png" width="100%" alt="Google Search AI Mode Chat Support" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 10px;" />
+  <img src="screenshot-expanded-v2.png" width="49%" alt="Prompt Navigator Gemini" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);" />
+  <img src="screenshot-collapsed.png" width="49%" alt="Prompt Navigator Collapsed" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);" />
 </p>
 
 ---
 
 ## 🛑 The Problem
-If you use Gemini for coding, writing, or researching, your threads quickly grow into massive scrolls. **Gemini has no native prompt list.** Finding a past prompt requires endless manual scrolling, breaking your flow.
+If you use Google Gemini or Google Search AI Mode chat for coding, writing, or researching, your threads quickly grow into massive scrolls. **Neither platform has a native prompt list.** Finding a past prompt requires endless manual scrolling, breaking your flow.
 
 ## 🚀 The Solution
 A floating sidebar widget that indexes your conversation in real time. It parses prompt structures, builds a live Table of Contents, and adds premium features:
@@ -38,8 +40,9 @@ A floating sidebar widget that indexes your conversation in real time. It parses
 
 This extension isn't just DOM scripts—it is built with robust extension principles:
 *   **Context Loss Guard:** Chrome invalidates background scripts on updates/reloads. We explicitly track runtime validation (`chrome.runtime`) and auto-clean DOM elements/MutationObservers to avoid memory leaks or duplicate sidebars.
+*   **Dynamic Attachment Guard:** It monitors the DOM in real time to ensure host-page dynamic content updates (such as Google Search SPA transitions) do not silently destroy the navigator panel, auto-appending it when necessary.
 *   **Performance Cache Loop:** The scanner debounces updates at `300ms` and compares parsed prompts with a cached snapshot. If the content is identical, it skips expensive rendering and animation loops.
-*   **Boundaries & Coordinates:** Sidebar scaling and dragging translate client coordinates directly to keep drag boundaries synchronized with the viewport limits.
+*   **Boundaries & Coordinates:** Sidebar scaling and dragging translate client coordinates directly to keep drag boundaries synchronized with the viewport limits, complete with window resize boundaries checking.
 
 ---
 
@@ -48,7 +51,7 @@ This extension isn't just DOM scripts—it is built with robust extension princi
 ```text
 gemini-navigator/
 ├── manifest.json   # Manifest V3 setup and scopes
-├── content.js      # DOM scanner, debounce observers, dragging, and coordinate translation
+├── content.js      # DOM scanner, SGE/Gemini detector, dragging, and coordinates
 ├── styles.css      # Glassmorphic panels, spring keyframe transitions, and dark/light themes
 ├── popup.html/.js  # Extension settings panel (toggle expand-on-load behavior)
 └── icon-128.png    # Extension list icon artwork
@@ -62,4 +65,4 @@ gemini-navigator/
 2.  Open Chrome and navigate to `chrome://extensions/`.
 3.  Enable **Developer mode** in the top right.
 4.  Click **Load unpacked** in the top left and select this folder.
-5.  Visit [Google Gemini](https://gemini.google.com) and click the blue toggle button to try it out!
+5.  Visit [Google Gemini](https://gemini.google.com) or perform an [AI Mode Search](https://www.google.com/search?q=react+native+need+javascript&udm=50) and click the blue toggle button to try it out!

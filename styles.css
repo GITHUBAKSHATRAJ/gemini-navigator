@@ -1,11 +1,12 @@
 /* Floating Container holding the extension elements */
 #gemini-nav-container {
-  position: fixed;
+  position: fixed !important;
   top: 80px;
   right: 20px;
-  z-index: 99999;
-  font-family: 'Google Sans', Roboto, Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
+  z-index: 99999 !important;
+  display: block !important;
+  font-family: 'Google Sans', Roboto, Helvetica, Arial, sans-serif !important;
+  box-sizing: border-box !important;
 }
 
 #gemini-nav-container * {
@@ -14,17 +15,17 @@
 
 /* Floating Toggle Button (Visible when sidebar is collapsed) */
 #gemini-nav-toggle-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1a73e8, #8ab4f8);
-  border: none;
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(26, 115, 232, 0.4);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #1a73e8, #8ab4f8) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(26, 115, 232, 0.4) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
 }
 
@@ -39,15 +40,15 @@
 
 /* Sidebar Body */
 #gemini-nav-sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
   width: 320px;
   height: 480px;
   min-width: 260px;
   min-height: 250px;
   max-width: 600px;
-  max-height: 90vh;
+  max-height: 90vh !important;
   resize: both;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
@@ -55,13 +56,13 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   transform: scale(0.9) translateY(-10px);
   opacity: 0;
   pointer-events: none;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 /* Expanded State for Container */
