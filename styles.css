@@ -15,6 +15,9 @@
 
 /* Floating Toggle Button (Visible when sidebar is collapsed) */
 #gemini-nav-toggle-btn {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
   width: 48px !important;
   height: 48px !important;
   border-radius: 50% !important;
