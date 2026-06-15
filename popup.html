@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 260px;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background-color: #ffffff;
+      color: #1f1f1f;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #1e1f20;
+        color: #e3e3e3;
+      }
+    }
+    h2 {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 6px;
+      color: #1a73e8;
+      font-weight: 600;
+    }
+    @media (prefers-color-scheme: dark) {
+      h2 {
+        color: #8ab4f8;
+      }
+    }
+    p {
+      font-size: 11px;
+      color: #5f6368;
+      margin-top: 0;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    @media (prefers-color-scheme: dark) {
+      p {
+        color: #c4c7c5;
+      }
+    }
+    .option-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #dadce0;
+      transition: .3s;
+      border-radius: 20px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .slider {
+        background-color: #3c4043;
+      }
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #1a73e8;
+    }
+    @media (prefers-color-scheme: dark) {
+      input:checked + .slider {
+        background-color: #8ab4f8;
+      }
+    }
+    input:checked + .slider:before {
+      transform: translateX(16px);
+    }
+    .footer {
+      font-size: 10px;
+      color: #9aa0a6;
+      text-align: center;
+      border-top: 1px solid #f1f3f4;
+      padding-top: 10px;
+      margin-top: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .footer {
+        border-top-color: #3c4043;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Gemini Prompt Navigator</h2>
+  <p>Easy-to-use table of contents. Open any chat session on Google Gemini to navigate long conversations.</p>
+  
+  <div class="option-row">
+    <span>Expand sidebar on load</span>
+    <label class="switch">
+      <input type="checkbox" id="expand-default">
+      <span class="slider"></span>
+    </label>
+  </div>
+  
+  <div class="footer">
+    Version 1.0.0 &bull; Chrome MV3 Extension
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

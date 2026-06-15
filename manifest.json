@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Prompt Navigator",
+  "version": "1.0.0",
+  "description": "Adds an interactive table of contents sidebar to easily search and navigate long Gemini conversations.",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-48.png"
+  }
+}
