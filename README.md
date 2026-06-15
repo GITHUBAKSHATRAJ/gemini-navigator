@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="screenshot-expanded.png" width="49%" alt="Prompt Navigator Expanded" />
+  <img src="screenshot-expanded-v2.png" width="49%" alt="Prompt Navigator" />
   <img src="screenshot-collapsed.png" width="49%" alt="Prompt Navigator Collapsed" />
 </p>
 
